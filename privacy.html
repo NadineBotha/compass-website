@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy - Compass Technologies Limited</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+background: linear-gradient(180deg, #11283e 0%, #1a3652 100%);
+color: rgba(255, 255, 255, 0.92);
+min-height: 100vh;
+line-height: 1.6;
+}
+.container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 24px;
+}
+/* Header */
+header {
+position: sticky;
+top: 0;
+z-index: 1000;
+background: #11283e;
+padding: 24px 0;
+border-bottom: 2px solid rgba(203, 173, 139, 0.3);
+backdrop-filter: blur(10px);
+}
+.header-container {
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.logo-header {
+display: flex;
+align-items: center;
+gap: 16px;
+text-decoration: none;
+}
+.logo-header img {
+width: 48px;
+height: 48px;
+}
+.logo-header h1 {
+font-size: 24px;
+font-weight: 700;
+color: #cbad8b;
+}
+/* Burger Menu */
+.burger-menu {
+cursor: pointer;
+padding: 8px;
+display: flex;
+flex-direction: column;
+gap: 6px;
+background: rgba(203, 173, 139, 0.2);
+border-radius: 8px;
+transition: background 0.2s;
+}
+.burger-menu:hover {
+background: rgba(203, 173, 139, 0.3);
+}
+.burger-line {
+width: 24px;
+height: 3px;
+background: #cbad8b;
+border-radius: 2px;
+transition: all 0.3s;
+}
+.burger-menu.active .burger-line:nth-child(1) {
+transform: rotate(45deg) translate(6px, 6px);
+}
+.burger-menu.active .burger-line:nth-child(2) {
+opacity: 0;
+}
+.burger-menu.active .burger-line:nth-child(3) {
+transform: rotate(-45deg) translate(6px, -6px);
+}
+/* Mobile Menu */
+.mobile-menu {
+position: fixed;
+top: 80px;
+right: -100%;
+width: 280px;
+background: #11283e;
+border: 2px solid rgba(203, 173, 139, 0.3);
+border-radius: 16px;
+padding: 20px;
+transition: right 0.3s ease;
+box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+.mobile-menu.active {
+right: 24px;
+}
+.mobile-menu a {
+display: block;
+padding: 16px;
+color: #cbad8b;
+text-decoration: none;
+font-weight: 600;
+border-radius: 8px;
+transition: background 0.2s;
+}
+.mobile-menu a:hover {
+background: rgba(203, 173, 139, 0.2);
+}
+/* Legal Content */
+.legal-content {
+padding: 80px 0;
+max-width: 900px;
+margin: 0 auto;
+}
+.legal-content h2 {
+font-size: 36px;
+font-weight: 900;
+margin-bottom: 16px;
+color: #cbad8b;
+}
+.legal-content .update-date {
+font-size: 14px;
+color: rgba(255, 255, 255, 0.60);
+margin-bottom: 48px;
+}
+.legal-content h3 {
+font-size: 24px;
+font-weight: 700;
+margin-top: 40px;
+margin-bottom: 16px;
+color: #cbad8b;
+}
+.legal-content p {
+font-size: 16px;
+color: rgba(255, 255, 255, 0.80);
+margin-bottom: 16px;
+line-height: 1.8;
+}
+.legal-content ul {
+margin-left: 24px;
+margin-bottom: 16px;
+}
+.legal-content li {
+font-size: 16px;
+color: rgba(255, 255, 255, 0.80);
+margin-bottom: 8px;
+line-height: 1.8;
+}
+.legal-content a {
+color: #cbad8b;
+text-decoration: underline;
+}
+.legal-content a:hover {
+color: #d4b897;
+}
+/* Footer */
+footer {
+padding: 40px 0;
+text-align: center;
+color: rgba(255, 255, 255, 0.60);
+border-top: 2px solid rgba(203, 173, 139, 0.3);
+margin-top: 60px;
+}
+.footer-links {
+display: flex;
+gap: 16px;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+margin-bottom: 20px;
+}
+.footer-links a {
+color: #cbad8b;
+text-decoration: none;
+font-weight: 600;
+transition: color 0.2s;
+}
+.footer-links a:hover {
+color: #d4b897;
+}
+.footer-links .separator {
+color: rgba(203, 173, 139, 0.4);
+}
+@media (max-width: 768px) {
+.legal-content h2 {
+font-size: 28px;
+}
+.legal-content h3 {
+font-size: 20px;
+}
+.mobile-menu.active {
+right: 16px;
+}
+}
+</style>
+</head>
+<body>
+<header>
+<div class="container">
+<div class="header-container">
+<a href="index.html" class="logo-header">
+<img src="compass-logo.png" alt="Compass Technologies">
+<h1>Compass Technologies</h1>
+</a>
+<div class="burger-menu" id="burgerMenu">
+<div class="burger-line"></div>
+<div class="burger-line"></div>
+<div class="burger-line"></div>
+</div>
+</div>
+</div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+<a href="index.html">Home</a>
+<a href="portfolio.html">Portfolio</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="privacy.html">Privacy Policy</a>
+<a href="terms.html">Terms of Service</a>
+</div>
+
+<main>
+<div class="container">
+<div class="legal-content">
+<h2>Privacy Policy</h2>
+<p class="update-date">Last Updated: February 7, 2026</p>
+
+<p>Compass Technologies Limited ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website and services.</p>
+
+<h3>1. Information We Collect</h3>
+<p><strong>Information You Provide:</strong></p>
+<ul>
+<li>Contact information (name, email address) when you contact us</li>
+<li>Any other information you choose to provide</li>
+</ul>
+
+<p><strong>Information Collected Automatically:</strong></p>
+<ul>
+<li>Log data (IP address, browser type, pages visited, time and date of visit)</li>
+<li>Device information (device type, operating system)</li>
+<li>Cookies and similar tracking technologies</li>
+</ul>
+
+<h3>2. How We Use Your Information</h3>
+<p>We use the information we collect to:</p>
+<ul>
+<li>Respond to your inquiries and provide customer support</li>
+<li>Improve and optimize our website and services</li>
+<li>Send you updates, newsletters, and marketing communications (with your consent)</li>
+<li>Comply with legal obligations</li>
+</ul>
+
+<h3>3. How We Share Your Information</h3>
+<p>We do not sell your personal information. We may share your information with:</p>
+<ul>
+<li>Service providers who assist us in operating our website and services</li>
+<li>Law enforcement or regulatory authorities when required by law</li>
+<li>Third parties in connection with a merger, acquisition, or sale of assets</li>
+</ul>
+
+<h3>4. Data Security</h3>
+<p>We implement appropriate technical and organizational measures to protect your personal information. However, no method of transmission over the internet is 100% secure.</p>
+
+<h3>5. Your Rights</h3>
+<p>Depending on your location, you may have the following rights:</p>
+<ul>
+<li>Access, correct, or delete your personal information</li>
+<li>Object to or restrict processing of your information</li>
+<li>Withdraw consent at any time</li>
+<li>File a complaint with a supervisory authority</li>
+</ul>
+
+<h3>6. Cookies</h3>
+<p>We use cookies and similar technologies to enhance your experience. You can control cookies through your browser settings.</p>
+
+<h3>7. Third-Party Links</h3>
+<p>Our website may contain links to third-party websites. We are not responsible for the privacy practices of these external sites.</p>
+
+<h3>8. Children's Privacy</h3>
+<p>Our services are not intended for children under 16. We do not knowingly collect personal information from children.</p>
+
+<h3>9. International Data Transfers</h3>
+<p>Your information may be transferred to and processed in countries other than your own. We ensure appropriate safeguards are in place.</p>
+
+<h3>10. Changes to This Policy</h3>
+<p>We may update this Privacy Policy from time to time. If we make material changes, we will notify you by:</p>
+<ul>
+<li>Posting the updated policy on this page</li>
+<li>Updating the "Last Updated" date</li>
+<li>Sending you an email (if you've provided your email address)</li>
+</ul>
+
+<h3>11. Contact Us</h3>
+<p>If you have questions about this Privacy Policy, please contact us:</p>
+<ul>
+<li>Email: <a href="mailto:support@gethuddleapp.com">support@gethuddleapp.com</a></li>
+<li>Website: <a href="contact.html">Contact Form</a></li>
+</ul>
+
+<p>Compass Technologies Limited<br>
+New Zealand</p>
+</div>
+</div>
+</main>
+
+<footer>
+<div class="container">
+<div class="footer-links">
+<a href="portfolio.html">Portfolio</a>
+<span class="separator">|</span>
+<a href="about.html">About</a>
+<span class="separator">|</span>
+<a href="contact.html">Contact</a>
+<span class="separator">|</span>
+<a href="privacy.html">Privacy Policy</a>
+<span class="separator">|</span>
+<a href="terms.html">Terms of Service</a>
+</div>
+<p>© 2026 Compass Technologies Limited. All rights reserved.</p>
+<p>New Zealand</p>
+</div>
+</footer>
+
+<script>
+// Burger menu toggle
+const burgerMenu = document.getElementById('burgerMenu');
+const mobileMenu = document.getElementById('mobileMenu');
+
+burgerMenu.addEventListener('click', () => {
+burgerMenu.classList.toggle('active');
+mobileMenu.classList.toggle('active');
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+if (!burgerMenu.contains(e.target) && !mobileMenu.contains(e.target)) {
+burgerMenu.classList.remove('active');
+mobileMenu.classList.remove('active');
+}
+});
+</script>
+</body>
+</html>

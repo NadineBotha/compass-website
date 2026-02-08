@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio - Compass Technologies Limited</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+background: linear-gradient(180deg, #11283e 0%, #1a3652 100%);
+color: rgba(255, 255, 255, 0.92);
+min-height: 100vh;
+line-height: 1.6;
+}
+.container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 24px;
+}
+/* Header */
+header {
+position: sticky;
+top: 0;
+z-index: 1000;
+background: #11283e;
+padding: 24px 0;
+border-bottom: 2px solid rgba(203, 173, 139, 0.3);
+backdrop-filter: blur(10px);
+}
+.header-container {
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.logo-header {
+display: flex;
+align-items: center;
+gap: 16px;
+text-decoration: none;
+}
+.logo-header img {
+width: 48px;
+height: 48px;
+}
+.logo-header h1 {
+font-size: 24px;
+font-weight: 700;
+color: #cbad8b;
+}
+/* Burger Menu */
+.burger-menu {
+cursor: pointer;
+padding: 8px;
+display: flex;
+flex-direction: column;
+gap: 6px;
+background: rgba(203, 173, 139, 0.2);
+border-radius: 8px;
+transition: background 0.2s;
+}
+.burger-menu:hover {
+background: rgba(203, 173, 139, 0.3);
+}
+.burger-line {
+width: 24px;
+height: 3px;
+background: #cbad8b;
+border-radius: 2px;
+transition: all 0.3s;
+}
+.burger-menu.active .burger-line:nth-child(1) {
+transform: rotate(45deg) translate(6px, 6px);
+}
+.burger-menu.active .burger-line:nth-child(2) {
+opacity: 0;
+}
+.burger-menu.active .burger-line:nth-child(3) {
+transform: rotate(-45deg) translate(6px, -6px);
+}
+/* Mobile Menu */
+.mobile-menu {
+position: fixed;
+top: 80px;
+right: -100%;
+width: 280px;
+background: #11283e;
+border: 2px solid rgba(203, 173, 139, 0.3);
+border-radius: 16px;
+padding: 20px;
+transition: right 0.3s ease;
+box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+.mobile-menu.active {
+right: 24px;
+}
+.mobile-menu a {
+display: block;
+padding: 16px;
+color: #cbad8b;
+text-decoration: none;
+font-weight: 600;
+border-radius: 8px;
+transition: background 0.2s;
+}
+.mobile-menu a:hover {
+background: rgba(203, 173, 139, 0.2);
+}
+/* Page Header */
+.page-header {
+padding: 80px 0 40px;
+text-align: center;
+}
+.page-header h2 {
+font-size: 48px;
+font-weight: 900;
+margin-bottom: 16px;
+color: #cbad8b;
+}
+.page-header p {
+font-size: 20px;
+color: rgba(255, 255, 255, 0.80);
+max-width: 700px;
+margin: 0 auto;
+}
+/* Product Section */
+.product-section {
+padding: 60px 0;
+}
+.product-header {
+margin-bottom: 48px;
+}
+.product-header h3 {
+font-size: 36px;
+font-weight: 900;
+margin-bottom: 16px;
+color: #cbad8b;
+}
+.product-header p {
+font-size: 18px;
+color: rgba(255, 255, 255, 0.80);
+line-height: 1.8;
+margin-bottom: 12px;
+}
+.product-link {
+color: #cbad8b;
+text-decoration: none;
+font-weight: 600;
+font-size: 18px;
+transition: color 0.2s;
+}
+.product-link:hover {
+color: #d4b897;
+}
+/* Features List */
+.features-list {
+background: rgba(203, 173, 139, 0.1);
+border: 2px solid rgba(203, 173, 139, 0.3);
+border-radius: 16px;
+padding: 40px;
+margin-bottom: 48px;
+}
+.features-list h4 {
+font-size: 24px;
+font-weight: 900;
+margin-bottom: 24px;
+color: #cbad8b;
+}
+.features-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 24px;
+}
+.feature-item {
+display: flex;
+align-items: flex-start;
+gap: 12px;
+}
+.feature-item span {
+color: #cbad8b;
+font-size: 20px;
+flex-shrink: 0;
+}
+.feature-item p {
+color: rgba(255, 255, 255, 0.80);
+font-size: 16px;
+}
+/* Screenshots Grid */
+.screenshots-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 32px;
+margin-bottom: 48px;
+}
+.screenshot-placeholder {
+background: rgba(203, 173, 139, 0.1);
+border: 2px solid rgba(203, 173, 139, 0.3);
+border-radius: 16px;
+aspect-ratio: 9 / 19.5;
+display: flex;
+align-items: center;
+justify-content: center;
+color: rgba(203, 173, 139, 0.6);
+font-size: 14px;
+font-weight: 700;
+text-align: center;
+padding: 20px;
+}
+.screenshot-label {
+text-align: center;
+margin-top: 16px;
+}
+.screenshot-label h4 {
+font-size: 18px;
+font-weight: 700;
+margin-bottom: 8px;
+color: #cbad8b;
+}
+.screenshot-label p {
+font-size: 14px;
+color: rgba(255, 255, 255, 0.70);
+}
+/* Footer */
+footer {
+padding: 40px 0;
+text-align: center;
+color: rgba(255, 255, 255, 0.60);
+border-top: 2px solid rgba(203, 173, 139, 0.3);
+margin-top: 60px;
+}
+.footer-links {
+display: flex;
+gap: 16px;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+margin-bottom: 20px;
+}
+.footer-links a {
+color: #cbad8b;
+text-decoration: none;
+font-weight: 600;
+transition: color 0.2s;
+}
+.footer-links a:hover {
+color: #d4b897;
+}
+.footer-links .separator {
+color: rgba(203, 173, 139, 0.4);
+}
+@media (max-width: 768px) {
+.page-header h2 {
+font-size: 36px;
+}
+.product-header h3 {
+font-size: 28px;
+}
+.screenshots-grid {
+grid-template-columns: 1fr;
+}
+.mobile-menu.active {
+right: 16px;
+}
+}
+</style>
+</head>
+<body>
+<header>
+<div class="container">
+<div class="header-container">
+<a href="index.html" class="logo-header">
+<img src="compass-logo.png" alt="Compass Technologies">
+<h1>Compass Technologies</h1>
+</a>
+<div class="burger-menu" id="burgerMenu">
+<div class="burger-line"></div>
+<div class="burger-line"></div>
+<div class="burger-line"></div>
+</div>
+</div>
+</div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+<a href="index.html">Home</a>
+<a href="portfolio.html">Portfolio</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="privacy.html">Privacy Policy</a>
+<a href="terms.html">Terms of Service</a>
+</div>
+
+<main>
+<section class="page-header">
+<div class="container">
+<h2>Our Portfolio</h2>
+<p>Digital products that solve real problems and bring people together.</p>
+</div>
+</section>
+
+<section class="product-section">
+<div class="container">
+<div class="product-header">
+<h3>Huddle</h3>
+<p>Organize group events without the chaos. Split expenses, make decisions, and coordinate schedules—all in one place.</p>
+<p>Huddle eliminates the stress of planning group trips, dinners, and gatherings by putting everything your group needs in one shared space.</p>
+<p><a href="https://gethuddleapp.com" class="product-link" target="_blank">Visit Huddle Website →</a></p>
+</div>
+
+<div class="features-list">
+<h4>Key Features</h4>
+<div class="features-grid">
+<div class="feature-item">
+<span>💰</span>
+<p><strong>Expense Splitting:</strong> Track who paid and settle up easily</p>
+</div>
+<div class="feature-item">
+<span>🗳️</span>
+<p><strong>Group Voting:</strong> Make decisions democratically</p>
+</div>
+<div class="feature-item">
+<span>🍽️</span>
+<p><strong>Menu Planning:</strong> Coordinate who brings what</p>
+</div>
+<div class="feature-item">
+<span>📅</span>
+<p><strong>Activity Tracking:</strong> Plan group activities together</p>
+</div>
+<div class="feature-item">
+<span>👥</span>
+<p><strong>Guest Management:</strong> Invite and coordinate everyone</p>
+</div>
+<div class="feature-item">
+<span>💬</span>
+<p><strong>Group Chat:</strong> Keep conversations in one place</p>
+</div>
+</div>
+</div>
+
+<div class="screenshots-grid">
+<div>
+<div class="screenshot-placeholder">Screenshot Coming Soon</div>
+<div class="screenshot-label">
+<h4>Event Dashboard</h4>
+<p>See everything at a glance</p>
+</div>
+</div>
+<div>
+<div class="screenshot-placeholder">Screenshot Coming Soon</div>
+<div class="screenshot-label">
+<h4>Group Decisions</h4>
+<p>Vote on dates, places, and plans</p>
+</div>
+</div>
+<div>
+<div class="screenshot-placeholder">Screenshot Coming Soon</div>
+<div class="screenshot-label">
+<h4>Expense Tracking</h4>
+<p>Split costs fairly and easily</p>
+</div>
+</div>
+<div>
+<div class="screenshot-placeholder">Screenshot Coming Soon</div>
+<div class="screenshot-label">
+<h4>Menu Planning</h4>
+<p>Coordinate group meals</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container">
+<div class="footer-links">
+<a href="portfolio.html">Portfolio</a>
+<span class="separator">|</span>
+<a href="about.html">About</a>
+<span class="separator">|</span>
+<a href="contact.html">Contact</a>
+<span class="separator">|</span>
+<a href="privacy.html">Privacy Policy</a>
+<span class="separator">|</span>
+<a href="terms.html">Terms of Service</a>
+</div>
+<p>© 2026 Compass Technologies Limited. All rights reserved.</p>
+<p>New Zealand</p>
+</div>
+</footer>
+
+<script>
+// Burger menu toggle
+const burgerMenu = document.getElementById('burgerMenu');
+const mobileMenu = document.getElementById('mobileMenu');
+
+burgerMenu.addEventListener('click', () => {
+burgerMenu.classList.toggle('active');
+mobileMenu.classList.toggle('active');
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+if (!burgerMenu.contains(e.target) && !mobileMenu.contains(e.target)) {
+burgerMenu.classList.remove('active');
+mobileMenu.classList.remove('active');
+}
+});
+</script>
+</body>
+</html>
