@@ -1,296 +1,423 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About - Compass Technologies Limited</title>
-<style>
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
-body {
-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-background: linear-gradient(180deg, #11283e 0%, #1a3652 100%);
-color: rgba(255, 255, 255, 0.92);
-min-height: 100vh;
-line-height: 1.6;
-}
-.container {
-max-width: 1200px;
-margin: 0 auto;
-padding: 0 24px;
-}
-/* Header */
-header {
-position: sticky;
-top: 0;
-z-index: 1000;
-background: #11283e;
-padding: 24px 0;
-border-bottom: 2px solid rgba(203, 173, 139, 0.3);
-backdrop-filter: blur(10px);
-}
-.header-container {
-display: flex;
-align-items: center;
-justify-content: space-between;
-}
-.logo-header {
-display: flex;
-align-items: center;
-gap: 16px;
-text-decoration: none;
-}
-.logo-header img {
-width: 48px;
-height: 48px;
-}
-.logo-header h1 {
-font-size: 24px;
-font-weight: 700;
-color: #cbad8b;
-}
-/* Burger Menu */
-.burger-menu {
-cursor: pointer;
-padding: 8px;
-display: flex;
-flex-direction: column;
-gap: 6px;
-background: rgba(203, 173, 139, 0.2);
-border-radius: 8px;
-transition: background 0.2s;
-}
-.burger-menu:hover {
-background: rgba(203, 173, 139, 0.3);
-}
-.burger-line {
-width: 24px;
-height: 3px;
-background: #cbad8b;
-border-radius: 2px;
-transition: all 0.3s;
-}
-.burger-menu.active .burger-line:nth-child(1) {
-transform: rotate(45deg) translate(6px, 6px);
-}
-.burger-menu.active .burger-line:nth-child(2) {
-opacity: 0;
-}
-.burger-menu.active .burger-line:nth-child(3) {
-transform: rotate(-45deg) translate(6px, -6px);
-}
-/* Mobile Menu */
-.mobile-menu {
-position: fixed;
-top: 80px;
-right: -100%;
-width: 280px;
-background: #11283e;
-border: 2px solid rgba(203, 173, 139, 0.3);
-border-radius: 16px;
-padding: 20px;
-transition: right 0.3s ease;
-box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-}
-.mobile-menu.active {
-right: 24px;
-}
-.mobile-menu a {
-display: block;
-padding: 16px;
-color: #cbad8b;
-text-decoration: none;
-font-weight: 600;
-border-radius: 8px;
-transition: background 0.2s;
-}
-.mobile-menu a:hover {
-background: rgba(203, 173, 139, 0.2);
-}
-/* Page Header */
-.page-header {
-padding: 80px 0 40px;
-text-align: center;
-}
-.page-header h2 {
-font-size: 48px;
-font-weight: 900;
-margin-bottom: 16px;
-color: #cbad8b;
-}
-.page-header p {
-font-size: 20px;
-color: rgba(255, 255, 255, 0.80);
-max-width: 700px;
-margin: 0 auto;
-}
-/* Content Section */
-.content-section {
-padding: 60px 0;
-}
-.content-block {
-background: rgba(203, 173, 139, 0.1);
-border: 2px solid rgba(203, 173, 139, 0.3);
-border-radius: 16px;
-padding: 48px;
-margin-bottom: 32px;
-}
-.content-block h3 {
-font-size: 32px;
-font-weight: 900;
-margin-bottom: 24px;
-color: #cbad8b;
-}
-.content-block p {
-font-size: 18px;
-color: rgba(255, 255, 255, 0.80);
-line-height: 1.8;
-margin-bottom: 16px;
-}
-.content-block p:last-child {
-margin-bottom: 0;
-}
-/* Footer */
-footer {
-padding: 40px 0;
-text-align: center;
-color: rgba(255, 255, 255, 0.60);
-border-top: 2px solid rgba(203, 173, 139, 0.3);
-margin-top: 60px;
-}
-.footer-links {
-display: flex;
-gap: 16px;
-justify-content: center;
-align-items: center;
-flex-wrap: wrap;
-margin-bottom: 20px;
-}
-.footer-links a {
-color: #cbad8b;
-text-decoration: none;
-font-weight: 600;
-transition: color 0.2s;
-}
-.footer-links a:hover {
-color: #d4b897;
-}
-.footer-links .separator {
-color: rgba(203, 173, 139, 0.4);
-}
-@media (max-width: 768px) {
-.page-header h2 {
-font-size: 36px;
-}
-.content-block {
-padding: 32px 24px;
-}
-.content-block h3 {
-font-size: 24px;
-}
-.mobile-menu.active {
-right: 16px;
-}
-}
-</style>
-</head>
-<body>
-<header>
-<div class="container">
-<div class="header-container">
-<a href="index.html" class="logo-header">
-<img src="compass-logo.png" alt="Compass Technologies">
-<h1>Compass Technologies</h1>
-</a>
-<div class="burger-menu" id="burgerMenu">
-<div class="burger-line"></div>
-<div class="burger-line"></div>
-<div class="burger-line"></div>
-</div>
-</div>
-</div>
-</header>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>About - Compass Technologies Limited</title>
 
-<div class="mobile-menu" id="mobileMenu">
-<a href="index.html">Home</a>
-<a href="portfolio.html">Portfolio</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-<a href="privacy.html">Privacy Policy</a>
-<a href="terms.html">Terms of Service</a>
-</div>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
 
-<main>
-<section class="page-header">
-<div class="container">
-<h2>About Us</h2>
-<p>Building technology that brings people together and creates meaningful community impact.</p>
-</div>
-</section>
+			body {
+				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+				background: linear-gradient(180deg, #11283e 0%, #1a3652 100%);
+				color: rgba(255, 255, 255, 0.92);
+				min-height: 100vh;
+				line-height: 1.6;
+			}
 
-<section class="content-section">
-<div class="container">
-<div class="content-block">
-<h3>Our Story</h3>
-<p>Compass Technologies was founded on a simple idea: technology should solve real problems and make life easier for real people.</p>
-<p>During a family Christmas gathering, we experienced firsthand the chaos of coordinating a group event—voting on activities, splitting expenses, planning meals, and keeping everyone informed. We realized there had to be a better way.</p>
-<p>That frustration sparked the creation of Huddle, our first product. But it also revealed something bigger: the potential to build sustainable technology businesses that generate revenue to fund direct community action.</p>
-</div>
+			.container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 24px;
+			}
 
-<div class="content-block">
-<h3>Our Approach</h3>
-<p>We build intuitive digital tools that simplify everyday challenges. Our products are designed to feel natural, work seamlessly, and bring people together rather than drive them apart.</p>
-<p>Every product we create is built with care, tested rigorously, and refined based on real user feedback. We don't chase trends—we solve problems that matter.</p>
-</div>
+			/* Header */
+			header {
+				position: sticky;
+				top: 0;
+				z-index: 1000;
+				background: #11283e;
+				padding: 24px 0;
+				border-bottom: 2px solid rgba(203, 173, 139, 0.3);
+				backdrop-filter: blur(10px);
+			}
 
-<div class="content-block">
-<h3>Our Purpose</h3>
-<p>Revenue from our products funds direct community action through our non-profit initiatives. We believe technology companies have a responsibility to give back in tangible, meaningful ways.</p>
-<p>Our goal is simple: build great products, generate sustainable revenue, and use that revenue to meet real needs—whether that's groceries for a struggling family, clothes for a job interview, or help maintaining a home after an injury.</p>
-<p>Technology for profit. Profit for purpose.</p>
-</div>
-</div>
-</section>
-</main>
+			.header-container {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
 
-<footer>
-<div class="container">
-<div class="footer-links">
-<a href="portfolio.html">Portfolio</a>
-<span class="separator">|</span>
-<a href="about.html">About</a>
-<span class="separator">|</span>
-<a href="contact.html">Contact</a>
-<span class="separator">|</span>
-<a href="privacy.html">Privacy Policy</a>
-<span class="separator">|</span>
-<a href="terms.html">Terms of Service</a>
-</div>
-<p>© 2026 Compass Technologies Limited. All rights reserved.</p>
-<p>New Zealand</p>
-</div>
-</footer>
+			.logo-header {
+				display: flex;
+				align-items: center;
+				gap: 16px;
+				text-decoration: none;
+			}
 
-<script>
-// Burger menu toggle
-const burgerMenu = document.getElementById('burgerMenu');
-const mobileMenu = document.getElementById('mobileMenu');
+			.logo-header img {
+				width: 48px;
+				height: 48px;
+			}
 
-burgerMenu.addEventListener('click', () => {
-burgerMenu.classList.toggle('active');
-mobileMenu.classList.toggle('active');
-});
+			.logo-header h1 {
+				font-size: 24px;
+				font-weight: 700;
+				color: #cbad8b;
+			}
 
-// Close menu when clicking outside
-document.addEventListener('click', (e) => {
-if (!burgerMenu.contains(e.target) && !mobileMenu.contains(e.target)) {
-burgerMenu.classList.remove('active');
-mobileMenu.classList.remove('active');
-}
-});
-</script>
-</body>
+			/* Burger Menu */
+			.burger-menu {
+				cursor: pointer;
+				padding: 8px;
+				display: flex;
+				flex-direction: column;
+				gap: 6px;
+				background: rgba(203, 173, 139, 0.2);
+				border-radius: 8px;
+				transition: background 0.2s;
+			}
+
+			.burger-menu:hover {
+				background: rgba(203, 173, 139, 0.3);
+			}
+
+			.burger-line {
+				width: 24px;
+				height: 3px;
+				background: #cbad8b;
+				border-radius: 2px;
+				transition: all 0.3s;
+			}
+
+			.burger-menu.active .burger-line:nth-child(1) {
+				transform: rotate(45deg) translate(6px, 6px);
+			}
+
+			.burger-menu.active .burger-line:nth-child(2) {
+				opacity: 0;
+			}
+
+			.burger-menu.active .burger-line:nth-child(3) {
+				transform: rotate(-45deg) translate(6px, -6px);
+			}
+
+			/* Mobile Menu */
+			.mobile-menu {
+				position: fixed;
+				top: 80px;
+				right: -100%;
+				width: 280px;
+				background: #11283e;
+				border: 2px solid rgba(203, 173, 139, 0.3);
+				border-radius: 16px;
+				padding: 20px;
+				transition: right 0.3s ease;
+				box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+			}
+
+			.mobile-menu.active {
+				right: 24px;
+			}
+
+			.mobile-menu a {
+				display: block;
+				padding: 16px;
+				color: #cbad8b;
+				text-decoration: none;
+				font-weight: 600;
+				border-radius: 8px;
+				transition: background 0.2s;
+			}
+
+			.mobile-menu a:hover {
+				background: rgba(203, 173, 139, 0.2);
+			}
+
+			/* Page Header */
+			.page-header {
+				padding: 80px 0 40px;
+				text-align: center;
+			}
+
+			.page-header h2 {
+				font-size: 48px;
+				font-weight: 900;
+				margin-bottom: 16px;
+				color: #cbad8b;
+			}
+
+			.page-header p {
+				font-size: 20px;
+				color: rgba(255, 255, 255, 0.8);
+				max-width: 850px;
+				margin: 0 auto;
+			}
+
+			/* Content Section */
+			.content-section {
+				padding: 60px 0;
+			}
+
+			.content-block {
+				background: rgba(203, 173, 139, 0.1);
+				border: 2px solid rgba(203, 173, 139, 0.3);
+				border-radius: 16px;
+				padding: 48px;
+				margin-bottom: 32px;
+			}
+
+			.content-block h3 {
+				font-size: 32px;
+				font-weight: 900;
+				margin-bottom: 24px;
+				color: #cbad8b;
+			}
+
+			.content-block p {
+				font-size: 18px;
+				color: rgba(255, 255, 255, 0.8);
+				line-height: 1.8;
+				margin-bottom: 16px;
+			}
+
+			.content-block p:last-child {
+				margin-bottom: 0;
+			}
+
+			.value-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+				gap: 18px;
+				margin-top: 18px;
+			}
+
+			.value-card {
+				background: rgba(17, 40, 62, 0.55);
+				border: 2px solid rgba(203, 173, 139, 0.22);
+				border-radius: 14px;
+				padding: 18px;
+			}
+
+			.value-card h4 {
+				font-size: 18px;
+				font-weight: 900;
+				color: #cbad8b;
+				margin-bottom: 6px;
+			}
+
+			.value-card p {
+				font-size: 15px;
+				color: rgba(255, 255, 255, 0.78);
+				margin-bottom: 0;
+			}
+
+			.inline-link {
+				color: #cbad8b;
+				text-decoration: none;
+				font-weight: 700;
+			}
+
+			.inline-link:hover {
+				color: #d4b897;
+			}
+
+			/* Footer */
+			footer {
+				padding: 40px 0;
+				text-align: center;
+				color: rgba(255, 255, 255, 0.6);
+				border-top: 2px solid rgba(203, 173, 139, 0.3);
+				margin-top: 60px;
+			}
+
+			.footer-links {
+				display: flex;
+				gap: 16px;
+				justify-content: center;
+				align-items: center;
+				flex-wrap: wrap;
+				margin-bottom: 20px;
+			}
+
+			.footer-links a {
+				color: #cbad8b;
+				text-decoration: none;
+				font-weight: 600;
+				transition: color 0.2s;
+			}
+
+			.footer-links a:hover {
+				color: #d4b897;
+			}
+
+			.footer-links .separator {
+				color: rgba(203, 173, 139, 0.4);
+			}
+
+			@media (max-width: 768px) {
+				.page-header h2 {
+					font-size: 36px;
+				}
+
+				.content-block {
+					padding: 32px 24px;
+				}
+
+				.content-block h3 {
+					font-size: 24px;
+				}
+
+				.mobile-menu.active {
+					right: 16px;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<header>
+			<div class="container">
+				<div class="header-container">
+					<a href="index.html" class="logo-header">
+						<img src="compass-logo.png" alt="Compass Technologies" />
+						<h1>Compass Technologies</h1>
+					</a>
+
+					<div class="burger-menu" id="burgerMenu" aria-label="Menu" role="button" tabindex="0">
+						<div class="burger-line"></div>
+						<div class="burger-line"></div>
+						<div class="burger-line"></div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<div class="mobile-menu" id="mobileMenu">
+			<a href="index.html">Home</a>
+			<a href="portfolio.html">Portfolio</a>
+			<a href="about.html">About</a>
+			<a href="contact.html">Contact</a>
+			<a href="privacy.html">Privacy Policy</a>
+			<a href="terms.html">Terms of Service</a>
+		</div>
+
+		<main>
+			<section class="page-header">
+				<div class="container">
+					<h2>About</h2>
+					<p>
+						Compass Technologies is a small product and engineering studio. We help teams run smoother by building integrations,
+						dashboards, and workflow tools that remove busywork and make the right information visible.
+					</p>
+				</div>
+			</section>
+
+			<section class="content-section">
+				<div class="container">
+					<div class="content-block">
+						<h3>What we do</h3>
+						<p>
+							We build software for operational efficiency: the unglamorous, high-impact stuff like connecting systems, reducing manual
+							admin, and making sure the numbers match.
+						</p>
+						<p>
+							That can look like a dashboard that shows exceptions before they become problems, a workflow that replaces messy spreadsheets,
+							or an integration that keeps CRM, dispatch, and finance aligned automatically.
+						</p>
+					</div>
+
+					<div class="content-block">
+						<h3>How we work</h3>
+						<p>
+							We start with discovery: understanding the real workflow, what breaks, and what “good” looks like. Then we scope a staged
+							build with clear outcomes and iterate quickly with frequent demos.
+						</p>
+
+						<div class="value-grid">
+							<div class="value-card">
+								<h4>Clarity</h4>
+								<p>Simple systems, readable numbers, and fewer unknowns.</p>
+							</div>
+							<div class="value-card">
+								<h4>Speed</h4>
+								<p>Small iterations, fast feedback, steady shipping.</p>
+							</div>
+							<div class="value-card">
+								<h4>Practicality</h4>
+								<p>Built around the team’s reality, not a perfect diagram.</p>
+							</div>
+							<div class="value-card">
+								<h4>Ownership</h4>
+								<p>We care about the outcome, not just the delivery.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="content-block">
+						<h3>Where we started</h3>
+						<p>
+							Our first product is <strong>Huddle</strong> — a mobile app for coordinating group events. Building a product end-to-end
+							sharpened how we approach real workflows: edge cases, human behavior, and the details that make something actually usable.
+						</p>
+						<p>
+							If you’re curious, you can see Huddle in our <a class="inline-link" href="portfolio.html">portfolio</a>.
+						</p>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer>
+			<div class="container">
+				<div class="footer-links">
+					<a href="portfolio.html">Portfolio</a>
+					<span class="separator">|</span>
+					<a href="about.html">About</a>
+					<span class="separator">|</span>
+					<a href="contact.html">Contact</a>
+					<span class="separator">|</span>
+					<a href="privacy.html">Privacy Policy</a>
+					<span class="separator">|</span>
+					<a href="terms.html">Terms of Service</a>
+				</div>
+				<p>© 2026 Compass Technologies Limited. All rights reserved.</p>
+				<p>New Zealand</p>
+			</div>
+		</footer>
+
+		<script>
+			// Burger menu toggle
+			const burgerMenu = document.getElementById("burgerMenu");
+			const mobileMenu = document.getElementById("mobileMenu");
+
+			const closeMenu = () => {
+				burgerMenu.classList.remove("active");
+				mobileMenu.classList.remove("active");
+			};
+
+			const toggleMenu = () => {
+				burgerMenu.classList.toggle("active");
+				mobileMenu.classList.toggle("active");
+			};
+
+			burgerMenu.addEventListener("click", toggleMenu);
+
+			burgerMenu.addEventListener("keydown", (e) => {
+				if (e.key === "Enter" || e.key === " ") {
+					e.preventDefault();
+					toggleMenu();
+				}
+			});
+
+			// Close menu when clicking outside
+			document.addEventListener("click", (e) => {
+				if (!burgerMenu.contains(e.target) && !mobileMenu.contains(e.target)) {
+					closeMenu();
+				}
+			});
+
+			// Close menu when a link is clicked
+			mobileMenu.addEventListener("click", (e) => {
+				if (e.target && e.target.tagName === "A") {
+					closeMenu();
+				}
+			});
+		</script>
+	</body>
 </html>
